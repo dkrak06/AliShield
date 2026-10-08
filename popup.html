@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AliShield</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="logo-area">
+        <div class="status-indicator active"></div>
+        <h2>AliShield</h2>
+      </div>
+      <span class="badge">v1.0</span>
+    </div>
+
+    <div class="status-box">
+      <div class="status-title">시스템 보호 작동 중</div>
+      <div class="status-desc">알리의 과도한 CPU 점유와 악성 핑거프린팅을 원천 차단하고 있습니다.</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-num" id="blockedCount">0</span>
+        <span class="stat-label">차단된 트래커/연산</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" style="color: #38ef7d;">ON</span>
+        <span class="stat-label">CPU 보호 모드</span>
+      </div>
+    </div>
+
+    <div class="features-list">
+      <div class="feature-item">
+        <span class="check">✔</span>
+        <span>악성 통계 비콘 (mmstat, alicdn) 차단</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✔</span>
+        <span>Canvas/WebGL 핑거프린팅 연산 무력화</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✔</span>
+        <span>배경 비디오 자동재생 및 렉 유발 렌더링 방지</span>
+      </div>
+      <div class="feature-item">
+        <span class="check">✔</span>
+        <span>장바구니 / 결제 / 상품 검색 정상 작동</span>
+      </div>
+    </div>
+
+    <button id="reloadBtn" class="action-btn">알리익스프레스 새로고침</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "AliShield v2.0 - 알리익스프레스 CPU 딥프리즈 & 렉 박멸기",
+  "version": "2.0.0",
+  "description": "알리익스프레스의 CPU 점유율 폭발(Wasm/WebGL/타이머루프), 핑거프린팅, 트래킹을 원천 차단하여 쾌적한 쇼핑 환경을 만듭니다.",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.aliexpress.com/*",
+    "*://*.alicdn.com/*",
+    "*://*.mmstat.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.aliexpress.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://*.aliexpress.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AliShield 상태",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
